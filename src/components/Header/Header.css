@@ -1,0 +1,11 @@
+.header a{
+    margin-right: 10px;
+    text-decoration: none;
+    color: #fff; 
+    padding:10px;                                                   
+}
+.header{
+    background-color: darkslategray;
+    color:blanchedalmond;
+    padding: 10px;
+}

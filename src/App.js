@@ -1,39 +1,74 @@
-import './App.css';
-import Home from './Pages/Home/Home/Home';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import NotFound from './Pages/NotFound/NotFound';
-import Booking from './Pages/Booking/Booking/Booking';
-import Login from './Pages/Login/Login/Login';
-import Header from './Pages/Shared/Header/Header';
-import AuthProvider from './contexts/AuthProvider';
-import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 
+import { BrowserRouter,Switch,Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import Header from './components/Header/Header';
+import AuthProvider from './context/AuthProvider';
+import Home from './components/Home/Home';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
+import Footer from './components/Footer/Footer';
+import Services from './components/Home/Services/Services';
+import Errorfile from './components/Errorfile/Errorfile';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Information from './components/Information/Information';
+import Doctors from './components/Home/Doctors/Doctors';
+import AddService from './components/AddService/AddService';
+import ManageServices from './components/ManageServices/ManageServices';
 
 function App() {
   return (
     <div className="App">
       <AuthProvider>
-        <Router>
-          <Header></Header>
-          <Switch>
-            <Route exact path="/">
-              <Home></Home>
-            </Route>
-            <Route path="/home">
-              <Home></Home>
-            </Route>
-            <Route path="/login">
-              <Login></Login>
-            </Route>
-            <PrivateRoute path="/booking/:serviceId">
-              <Booking></Booking>
-            </PrivateRoute>
-            <Route path="*">
-              <NotFound></NotFound>
-            </Route>
-          </Switch>
-        </Router>
+        <BrowserRouter>
+        <Header></Header>
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route exact path="/home">
+            <Home></Home>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/register">
+            <Register></Register>
+          </Route>
+          <Route path="/services">
+            <Services></Services>
+          </Route>
+          {/* <Route path="/about">
+            <About></About>
+          </Route> */}
+          <Route path="/contact">
+            <Contact></Contact>
+          </Route>
+          <Route path="/doctors">
+            <Doctors></Doctors>
+          </Route>
+          <PrivateRoute path="/information/:serviceId">
+            <Information></Information>
+          </PrivateRoute>
+          <PrivateRoute path="/about">
+            <About></About>
+          </PrivateRoute>
+          <Route path="/addService">
+            <AddService></AddService>
+          </Route>
+          <Route path="/manageServices">
+            <ManageServices></ManageServices>
+          </Route>
+          <Route exact path="*">
+            <Errorfile></Errorfile>
+          </Route>
+        </Switch>
+        <Footer></Footer>
+        </BrowserRouter>
       </AuthProvider>
+  
     </div>
   );
 }

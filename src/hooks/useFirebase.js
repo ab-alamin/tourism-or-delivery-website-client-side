@@ -1,53 +1,71 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "firebase/auth";
-import { useState, useEffect } from 'react';
-import initializeAuthentication from './../Pages/Login/Firebase/firebase.init';
+import { useEffect, useState } from "react";
+import initializeAuthentication from "../Firebase/firebase.init";
+import { getAuth, signInWithPopup, GoogleAuthProvider,
+onAuthStateChanged, GithubAuthProvider, signOut } from "firebase/auth";
 
 initializeAuthentication();
 
-const useFirebase = () => {
+const useFirebase = ()  => {
     const [user, setUser] = useState({});
-    const [isLoading, setIsLoading] = useState(true);
-
+    const [isLoading,setIsLoading] = useState(true);
+    const [error,seterror] = useState(''); 
     const auth = getAuth();
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
-    const signInUsingGoogle = () => {
-        setIsLoading(true);
-        const googleProvider = new GoogleAuthProvider();
+    // const signInUsinggoogle = () => {
+    //     setIsLoading(true);
+    //     signInWithPopup(auth, googleProvider)
+    //     .then(result => {
+    //         console.log(result.user);
+    //         setUser(result.user);
+    //     })
+    //     .finally(()=> setIsLoading(false));
 
-        signInWithPopup(auth, googleProvider)
+        const signInUsinggoogle = () => {
+            signInWithPopup(auth, googleProvider)
             .then(result => {
+                console.log(result.user);
                 setUser(result.user);
             })
-            .finally(() => setIsLoading(false));
-    }
+            .catch(err => {
+                seterror(error.message);
+            })
+    
+        }
+    
+        
 
-    // observe user state change
+    
+      const signInUsingGithub = () => {
+          signInWithPopup(auth,githubProvider)
+          .then(result => {
+              setUser(result.user);
+          })
+      }
+    const logout = () => {
+        setIsLoading(true);
+            signOut(auth)
+            .then(() => {
+                setUser({})
+                .finally(()=> setIsLoading(false));
+            })
+    }
+    //observe user state change
     useEffect(() => {
-        const unsubscribed = onAuthStateChanged(auth, user => {
-            if (user) {
+        onAuthStateChanged(auth,user=>{
+            if(user){
                 setUser(user);
             }
-            else {
-                setUser({})
-            }
-            setIsLoading(false);
-        });
-        return () => unsubscribed;
-    }, [])
-
-    const logOut = () => {
-        setIsLoading(true);
-        signOut(auth)
-            .then(() => { })
-            .finally(() => setIsLoading(false));
-    }
-
+        })
+    },[])
     return {
+        error,
         user,
         isLoading,
-        signInUsingGoogle,
-        logOut
+        signInUsinggoogle,
+        signInUsingGithub,
+        logout
     }
 }
-
 export default useFirebase;

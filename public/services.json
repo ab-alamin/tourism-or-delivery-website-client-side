@@ -1,44 +1,44 @@
 [
     {
         "id": 1,
-        "name": "ENGINE DIAGNOSTIC",
-        "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/dGDkr4v/1.jpg"
+        "name": "Online Health Services",
+        "fee":"free",
+        "description":"Dr.Ali is Online Health speasilized",
+        "img":"https://i.ibb.co/R3xS9gD/1.jpg"
     },
     {
         "id": 2,
-        "name": "WHEEL ALIGNMENT",
-        "price": "100",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/tY8dmnP/2.jpg"
+        "name": "general and specialty surgical services",
+        "fee":"Minimum 1000",
+        "description":"Dr.labib is a surgery speasilized",
+        "img":"https://i.ibb.co/N6y5kC9/2.jpg"
     },
     {
         "id": 3,
-        "name": "OIL CHANGING",
-        "price": "150",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/Yh04YVw/3.jpg"
+        "name": "x ray/radiology services",
+        "fee":"1000",
+        "description":"Dr.maxim speasilized",
+        "img":"https://i.ibb.co/fYYn4vH/3.jpg"
     },
     {
         "id": 4,
-        "name": "BRAKE REPARING",
-        "price": "180",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/ZX2Cbkn/4.jpg"
+        "name": "Blood Test",
+        "fee":"500",
+        "description":"Dr.Tanisha speasilized",
+        "img":"https://i.ibb.co/QFHDT8z/4.jpg"
     },
     {
         "id": 5,
-        "name": "WASH AND GLASSING",
-        "price": "100",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/FgQ3jXp/5.jpg"
+        "name": "Mental Health",
+        "fee":"Minimum 20,000",
+        "description":"Dr.Kabiris a madecine speasilized",
+        "img":"https://i.ibb.co/PYn7yPC/5.jpg"
     },
     {
         "id": 6,
-        "name": "COMPLETE ANALYSIS",
-        "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
-        "img": "https://i.ibb.co/zJy5ZDd/6.jpg"
+        "name": "Presure Test",
+        "fee":"100",
+        "description":"Dr.Shijaan is a speasilized",
+        "img":"https://i.ibb.co/w7RCFp2/6.jpg"
     }
 ]
