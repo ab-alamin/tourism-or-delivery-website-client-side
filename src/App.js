@@ -14,9 +14,9 @@ import Services from './components/Home/Services/Services';
 import Errorfile from './components/Errorfile/Errorfile';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Information from './components/Information/Information';
-import Doctors from './components/Home/Doctors/Doctors';
 import AddService from './components/AddService/AddService';
 import ManageServices from './components/ManageServices/ManageServices';
+import Hotels from './components/Home/Hotels/Hotels';
 
 function App() {
   return (
@@ -47,7 +47,7 @@ function App() {
             <Contact></Contact>
           </Route>
           <Route path="/doctors">
-            <Doctors></Doctors>
+            <Hotels></Hotels>
           </Route>
           <PrivateRoute path="/information/:serviceId">
             <Information></Information>
@@ -55,12 +55,12 @@ function App() {
           <PrivateRoute path="/about">
             <About></About>
           </PrivateRoute>
-          <Route path="/addService">
+          <PrivateRoute path="/addService">
             <AddService></AddService>
-          </Route>
-          <Route path="/manageServices">
+          </PrivateRoute>
+          <PrivateRoute path="/manageServices">
             <ManageServices></ManageServices>
-          </Route>
+          </PrivateRoute>
           <Route exact path="*">
             <Errorfile></Errorfile>
           </Route>

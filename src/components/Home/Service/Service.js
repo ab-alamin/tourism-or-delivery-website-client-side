@@ -5,7 +5,7 @@ import { Card, CardGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Service = ({service}) => {
-    const {_id,name, fee, description, img } = service;
+    const {_id,name, price, description, img } = service;
     return (
         <div className="service pb-3">
             <div>
@@ -14,7 +14,7 @@ const Service = ({service}) => {
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
                 <Card.Title>Name:{name}</Card.Title>
-                <p>Service Fee:{fee}</p>
+                <p>Service Fee:{price}</p>
                 <Card.Text>
                 Description:{description}
                 </Card.Text>

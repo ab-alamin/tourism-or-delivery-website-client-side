@@ -1,6 +1,6 @@
 import React from 'react';
 import Banners from './Banners/Banners';
-import Doctors from './Doctors/Doctors';
+import Hotels from './Hotels/Hotels';
 import Services from './Services/Services';
 
 const Home = () => {
@@ -8,7 +8,7 @@ const Home = () => {
         <div id="home">
             <Banners></Banners>
             <Services></Services>
-            <Doctors> </Doctors>
+            <Hotels> </Hotels>
         </div>
     );
 };
